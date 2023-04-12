@@ -1,0 +1,39 @@
+<resources>
+  <string name="app_name">AutoCaptureAndUpload</string>
+  <string name="title_activity_upload_image">UploadImageActivity</string>
+  <!-- Strings used for fragments for navigation -->
+  <string name="first_fragment_label">First Fragment</string>
+  <string name="second_fragment_label">Second Fragment</string>
+  <string name="next">Next</string>
+  <string name="previous">Previous</string>
+
+  <string name="hello_first_fragment">Hello first fragment</string>
+  <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+  <string name="interval">Interval (in seconds)</string>
+  <string name="amazon_s3_url">Amazon S3 URL</string>
+  <string name="in_seconds">in Seconds</string>
+  <!--    <string name="ex_https_jared_bucket_us_s3_us_west_1_amazonaws_com_jaredapp_images">Ex: -https://jared-bucket-us.s3.us-west-1.amazonaws.com/jaredapp-images</string>-->
+  <!--    <string name="https_app_pictureupload_s3_us_west_2_amazonaws_com">https://jared-bucket-us.s3.us-west-1.amazonaws.com/jaredapp-images</string> //https://app-pictureupload.s3.us-west-2.amazonaws.com/-->
+  <string name="ex_https_jared_bucket_us_s3_us_west_1_amazonaws_com_jaredapp_images">Ex: -https://app-pictureupload.s3.us-west-2.amazonaws.com/</string>
+  <string name="https_app_pictureupload_s3_us_west_2_amazonaws_com">https://app-pictureupload.s3.us-west-2.amazonaws.com/</string>
+<!--  //https://app-pictureupload.s3.us-west-2.amazonaws.com/-->
+<!--    <string name="ex_https_jared_bucket_us_s3_us_west_1_amazonaws_com_jaredapp_images">Ex: -https://jared-bucket-us.s3.us-west-1.amazonaws.com/jaredapp-images</string>-->
+<!--    <string name="https_app_pictureupload_s3_us_west_2_amazonaws_com">https://jared-bucket-us.s3.us-west-1.amazonaws.com/jaredapp-images</string>-->
+  <string name="pictureHeader">Picture uploading</string>
+
+  jaredapp-images
+
+
+
+  <string name="camera_mode_none">None</string>
+  <string name="camera_mode_auto">Auto</string>
+  <string name="camera_mode_bokeh">Bokeh</string>
+  <string name="camera_mode_hdr">HDR</string>
+  <string name="camera_mode_night">Night</string>
+  <string name="camera_mode_face_retouch">Face Retouch</string>
+
+  <string name="camera_permissions_request_with_rationale">You can\'t use camera extensions unless Auto Capture App has access to your camera.</string>
+  <string name="camera_permissions_request">Allow Auto Capture App Extensions access to your camera to try camera extensions.</string>
+  <string name="camera_permissions_action">Turn On</string>
+
+</resources>
