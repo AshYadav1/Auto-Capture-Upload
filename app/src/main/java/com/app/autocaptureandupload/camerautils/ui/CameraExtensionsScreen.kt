@@ -182,12 +182,14 @@ class CameraExtensionsScreen(private val root: View) {
 
 
     fun tapToFocus(){
-        val meteringPointFactory = previewView.meteringPointFactory
-        focusPoint = meteringPointFactory.createPoint(lastMotionEvent.x, lastMotionEvent.y)
-        root.findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
-            _action.emit(CameraUiAction.Focus(focusPoint))
+        if(this::focusPoint.isInitialized){
+            val meteringPointFactory = previewView.meteringPointFactory
+            focusPoint = meteringPointFactory.createPoint(lastMotionEvent.x, lastMotionEvent.y)
+            root.findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
+                _action.emit(CameraUiAction.Focus(focusPoint))
+            }
+            showFocusPoint(focusPointView, lastMotionEvent.x, lastMotionEvent.y)
         }
-        showFocusPoint(focusPointView, lastMotionEvent.x, lastMotionEvent.y)
     }
 
     fun setCaptureScreenViewState(state: CaptureScreenViewState) {
