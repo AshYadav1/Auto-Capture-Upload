@@ -14,6 +14,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.camera.core.FocusMeteringAction
 import androidx.camera.core.MeteringPoint
 import androidx.camera.view.PreviewView
 import androidx.core.view.GestureDetectorCompat
@@ -140,13 +141,17 @@ class CameraExtensionsScreen(private val root: View) {
             }
         }
 
+
         val gestureDetector = GestureDetectorCompat(context, object : SimpleOnGestureListener() {
             override fun onDown(e: MotionEvent): Boolean = true
 
             override fun onSingleTapUp(e: MotionEvent): Boolean {
+
+
                 lastMotionEvent =  e
                 val meteringPointFactory = previewView.meteringPointFactory
                 focusPoint = meteringPointFactory.createPoint(e.x, e.y)
+
                 root.findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
                     _action.emit(CameraUiAction.Focus(focusPoint))
                 }
@@ -180,15 +185,18 @@ class CameraExtensionsScreen(private val root: View) {
         }
     }
 
+    fun autoFocusAction(){
+
+    }
 
     fun tapToFocus(){
         if(this::focusPoint.isInitialized){
-            val meteringPointFactory = previewView.meteringPointFactory
-            focusPoint = meteringPointFactory.createPoint(lastMotionEvent.x, lastMotionEvent.y)
-            root.findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
-                _action.emit(CameraUiAction.Focus(focusPoint))
-            }
-            showFocusPoint(focusPointView, lastMotionEvent.x, lastMotionEvent.y)
+//            val meteringPointFactory = previewView.meteringPointFactory
+//            focusPoint = meteringPointFactory.createPoint(lastMotionEvent.x, lastMotionEvent.y)
+//            root.findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
+//                _action.emit(CameraUiAction.Focus(focusPoint))
+//            }
+//            showFocusPoint(focusPointView, lastMotionEvent.x, lastMotionEvent.y)
         }
     }
 

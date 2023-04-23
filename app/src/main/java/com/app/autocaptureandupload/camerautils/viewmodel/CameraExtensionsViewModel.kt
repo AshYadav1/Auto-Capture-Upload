@@ -1,5 +1,3 @@
-
-
 package com.app.autocaptureandupload.camerautils.viewmodel
 
 import android.app.Application
@@ -260,7 +258,12 @@ class CameraExtensionsViewModel(
 
     fun focus(meteringPoint: MeteringPoint) {
         val camera = camera ?: return
-        val meteringAction = FocusMeteringAction.Builder(meteringPoint).build()
+        val meteringAction = FocusMeteringAction.Builder(
+            meteringPoint,
+            FocusMeteringAction.FLAG_AF or
+                    FocusMeteringAction.FLAG_AE or
+                    FocusMeteringAction.FLAG_AWB
+        ).apply { disableAutoCancel() }.build()
         camera.cameraControl.startFocusAndMetering(meteringAction)
     }
 
